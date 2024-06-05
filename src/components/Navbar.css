@@ -1,0 +1,53 @@
+body, html, #root, .ant-layout, .ant-layout-content {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0 20px;
+  color: white;
+  
+}
+
+.logo img {
+  position: absolute;
+  top: -5px;
+  left: 25px;
+  height: 100px; 
+  width: auto;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: black;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .right-menu {
+    display: none;
+  }
+
+  .logo img {
+    height: 100px; 
+  }
+}

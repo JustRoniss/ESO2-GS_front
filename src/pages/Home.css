@@ -1,0 +1,102 @@
+
+body, html, #root, .ant-layout, .ant-layout-content {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.home {
+    text-align: center;
+  }
+  
+  .hero {
+    margin-top: 0;
+    background: rgb(255,124,18);
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    
+  }
+
+  .hero-text {
+    max-width: 50%;
+    text-align: left;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .hero button {
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .hero-image img {
+    max-width: 50%;
+    height: auto;
+  }
+  
+  .logo {
+    height: 300px; 
+    width: auto;
+  }
+
+  .stats, .services {
+    padding: 20px 20px;
+  }
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .services {
+
+    /* background: linear-gradient(360deg, hsla(27, 100%, 50%, 1) 9%, hsla(0, 0%, 100%, 1) 78%); */
+    /* background: linear-gradient(360deg, hsla(27, 100%, 54%, 1) 36%, hsla(0, 0%, 100%, 1) 100%); */
+    
+    background: linear-gradient(360deg, hsla(27, 100%, 54%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+
+    padding: 60px 15px;
+  }
+  
+  .services h2 {
+    margin-bottom: 40px;
+  }
+  
+  .service-icon {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .service-icon img {
+    max-width: 80px; 
+  }
