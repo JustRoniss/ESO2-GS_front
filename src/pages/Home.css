@@ -80,9 +80,6 @@ body, html, #root, .ant-layout, .ant-layout-content {
   
   .services {
 
-    /* background: linear-gradient(360deg, hsla(27, 100%, 50%, 1) 9%, hsla(0, 0%, 100%, 1) 78%); */
-    /* background: linear-gradient(360deg, hsla(27, 100%, 54%, 1) 36%, hsla(0, 0%, 100%, 1) 100%); */
-    
     background: linear-gradient(360deg, hsla(27, 100%, 54%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
 
     padding: 60px 15px;
