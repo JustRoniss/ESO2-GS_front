@@ -1,12 +1,22 @@
 import { Modal, Form, Input, Button, Select, Alert } from "antd";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "../config/axiosConfig";
 import { Praia } from "../interfaces/Praia";
+import { validateCPF } from "../utils/CpfValidator";
 
 interface InformModalProps {
   visible: boolean;
   onClose: () => void;
 }
+
+const formatCPF = (value: string) => {
+  return value
+    .replace(/\D/g, '')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d{1,2})$/, '$1-$2')
+    .slice(0, 14); 
+};
 
 const InformModal: React.FC<InformModalProps> = ({ visible, onClose }) => {
   const [loading, setLoading] = useState(false);
@@ -84,6 +94,12 @@ const InformModal: React.FC<InformModalProps> = ({ visible, onClose }) => {
     }
   };
 
+  const handleCPFChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    const formattedValue = formatCPF(value);
+    form.setFieldsValue({ cpf: formattedValue });
+  };
+
   const handleReset = () => {
     setSelectedBeachId(null);
     setIsBeachPolluted(false);
@@ -126,8 +142,23 @@ const InformModal: React.FC<InformModalProps> = ({ visible, onClose }) => {
               <Input />
             </Form.Item>
 
-            <Form.Item name="cpf" label="Informe o seu CPF" rules={[{ required: true, message: 'Por favor, insira seu CPF' }]}>
-              <Input />
+            <Form.Item 
+              name="cpf" 
+              label="Informe o seu CPF" 
+              rules={[{ 
+                required: true, 
+                message: 'Por favor, insira seu CPF' }, 
+                {
+                  validator: (_, value) => {
+                    if (!value || validateCPF(value)) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(new Error('CPF inválido'));
+                  }
+                }
+              ]}
+            >
+              <Input onChange={handleCPFChange} maxLength={14} />
             </Form.Item>
 
             <Form.Item name="descricao" label="Informe mais detalhes" rules={[{ required: true, message: 'Por favor, insira uma descrição' }]}>
