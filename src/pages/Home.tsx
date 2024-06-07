@@ -5,6 +5,7 @@ import heroImage from '../images/img1.webp';
 import logo from '../images/logo_sos.png'
 import CountUp from 'react-countup';
 import { AlertOutlined  , SearchOutlined , InfoCircleOutlined } from '@ant-design/icons';
+import InformModal from '../components/InformModal';
 
 
 const { Meta } = Card;
@@ -16,8 +17,18 @@ const Home: React.FC = () => {
     cleaned: false
   });
 
+  const [informModalVisible, setInformModalVisible] = useState(false);
+
   const handleScrollToStats = () => {
     document.getElementById('stats-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleCardClick = (modalType: 'informModal' | 'checkReports') => {
+    if (modalType === 'informModal') {
+      setInformModalVisible(true);
+    } else if (modalType === 'checkReports') {
+
+    }
   };
 
   useEffect(() => {
@@ -101,7 +112,7 @@ const Home: React.FC = () => {
       <section className="services reveal">
         <Row gutter={[16, 16]} justify="center">
           <Col span={8}>
-            <Card hoverable>
+            <Card hoverable onClick={() => handleCardClick('informModal')}>
               <div className="service-icon">
                 <AlertOutlined style={{ fontSize: '64px', color: '#FF7C12' }} />
               </div>
@@ -126,6 +137,10 @@ const Home: React.FC = () => {
           </Col>
         </Row>
       </section>
+      <InformModal
+        visible={informModalVisible}
+        onClose={() => setInformModalVisible(false)}
+      />
     </div>
   );
 };
