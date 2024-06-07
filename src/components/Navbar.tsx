@@ -72,6 +72,7 @@ const Navbar: React.FC = () => {
           className="input-field"
         />
       </Drawer>
+      
       <div className="right-menu">
         <Input
           placeholder="Username"

@@ -14,6 +14,7 @@ const InformModal: React.FC<InformModalProps> = ({ visible, onClose }) => {
   const [form] = Form.useForm();
   const [selectedBeachId, setSelectedBeachId] = useState<number | null>(null);
   const [isBeachPolluted, setIsBeachPolluted] = useState<boolean>(false);
+  const [showAdditionalFields, setShowAdditionalFields] = useState<boolean>(false);
 
   useEffect(() => {
     if (visible) {
@@ -27,39 +28,76 @@ const InformModal: React.FC<InformModalProps> = ({ visible, onClose }) => {
     }
   }, [visible]);
 
-  const handleFinish = (values: any) => {
+  const handleFinish = async (values: any) => {
     if (selectedBeachId === null) {
       console.error("Nenhuma praia selecionada");
       return;
     }
 
     setLoading(true);
-    api.put(`/praias/poluida/${selectedBeachId}`)
-      .then(response => {
-        console.log('Praia marcada', response);
-        setLoading(false);
-        onClose();
-      })
-      .catch(error => {
-        console.error('Erro', error);
-        setLoading(false);
+
+    if (isBeachPolluted) {
+      console.error("Praia já está poluída");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await api.post('/registro/salvar', {
+        nomePessoa: values.nomePessoa,
+        cpf: values.cpf,
+        descricao: values.descricao,
+        praia: { id: selectedBeachId },
+        dataReport: new Date(),
       });
+
+      if (response.status === 201) {
+        console.log("Criado com sucesso");
+        handleReset();
+        onClose();
+      } else {
+        console.log('Falha ao criar o registro');
+      }
+    } catch (error) {
+      console.error('Erro ao criar o registro', error);
+      console.log('Erro ao criar o registro');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleChange = (value: string) => {
+  const handleChange = async (value: string) => {
     const selectedBeach = beaches.find((beach: Praia) => beach.nome === value);
     if (selectedBeach) {
       setSelectedBeachId(selectedBeach.id);
-      setIsBeachPolluted(selectedBeach.poluida); 
+      setIsBeachPolluted(selectedBeach.poluida);
       form.setFieldsValue({
         cidade: selectedBeach.cidade,
         estado: selectedBeach.estado
       });
+
+      if (!selectedBeach.poluida) {
+        setShowAdditionalFields(true);
+      } else {
+        setShowAdditionalFields(false);
+      }
     }
   };
 
+  const handleReset = () => {
+    setSelectedBeachId(null);
+    setIsBeachPolluted(false);
+    setShowAdditionalFields(false);
+    form.resetFields();
+  };
+
+  const handleClose = () => {
+    handleReset();
+    onClose();
+  };
+
   return (
-    <Modal open={visible} onCancel={onClose} title="Informar Praia Suja" footer={null}>
+    <Modal open={visible} onCancel={handleClose} title="Informar Praia Suja" footer={null}>
       {isBeachPolluted && (
         <Alert message="Já foi informado que essa praia está poluída." type="warning" showIcon />
       )}
@@ -81,6 +119,22 @@ const InformModal: React.FC<InformModalProps> = ({ visible, onClose }) => {
         <Form.Item name="estado" rules={[{ required: true, message: 'Por favor, insira o estado' }]}>
           <Input placeholder="Estado" disabled />
         </Form.Item>
+
+        {showAdditionalFields && (
+          <>
+            <Form.Item name="nomePessoa" label="Nome" rules={[{ required: true, message: 'Por favor, insira seu nome' }]}>
+              <Input />
+            </Form.Item>
+
+            <Form.Item name="cpf" label="CPF" rules={[{ required: true, message: 'Por favor, insira seu CPF' }]}>
+              <Input />
+            </Form.Item>
+
+            <Form.Item name="descricao" label="Descrição" rules={[{ required: true, message: 'Por favor, insira uma descrição' }]}>
+              <Input.TextArea rows={4} />
+            </Form.Item>
+          </>
+        )}
 
         <Form.Item>
           <Button type="primary" htmlType="submit" loading={loading} disabled={isBeachPolluted}>
