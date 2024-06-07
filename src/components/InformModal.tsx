@@ -122,16 +122,16 @@ const InformModal: React.FC<InformModalProps> = ({ visible, onClose }) => {
 
         {showAdditionalFields && (
           <>
-            <Form.Item name="nomePessoa" label="Nome" rules={[{ required: true, message: 'Por favor, insira seu nome' }]}>
+            <Form.Item name="nomePessoa" label="Qual o seu nome? " rules={[{ required: true, message: 'Por favor, insira seu nome' }]}>
               <Input />
             </Form.Item>
 
-            <Form.Item name="cpf" label="CPF" rules={[{ required: true, message: 'Por favor, insira seu CPF' }]}>
+            <Form.Item name="cpf" label="Informe o seu CPF" rules={[{ required: true, message: 'Por favor, insira seu CPF' }]}>
               <Input />
             </Form.Item>
 
-            <Form.Item name="descricao" label="Descrição" rules={[{ required: true, message: 'Por favor, insira uma descrição' }]}>
-              <Input.TextArea rows={4} />
+            <Form.Item name="descricao" label="Informe mais detalhes" rules={[{ required: true, message: 'Por favor, insira uma descrição' }]}>
+              <Input.TextArea placeholder="Dê maiores detalhes sobre o tipo de poluição que está vendo, e nos informe mais detalhes do local da praia. Ajude as ONGs a localizar o local da sua denuncia" rows={4} />
             </Form.Item>
           </>
         )}
