@@ -7,6 +7,7 @@ import CountUp from 'react-countup';
 import { AlertOutlined  , SearchOutlined , InfoCircleOutlined } from '@ant-design/icons';
 import InformModal from '../components/InformModal';
 import InformacoesHomeModal from '../components/InformacoesHomeModal';
+import ReportsModal from '../components/ReportsModal';
 
 
 const { Meta } = Card;
@@ -20,18 +21,21 @@ const Home: React.FC = () => {
 
   const [informModalVisible, setInformModalVisible] = useState(false);
   const [informacoesHomeModalVisible, setInformacoesHomeModalVisible] = useState(false);
+  const [reporttsModalVisible, setReporttsModalVisible] = useState(false);
 
 
   const handleScrollToStats = () => {
     document.getElementById('stats-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleCardClick = (modalType: 'informModal' | 'checkReports' | 'informacoesHome') => {
+  const handleCardClick = (modalType: 'informModal' | 'reportsModal' | 'informacoesHome') => {
     if (modalType === 'informModal') {
       setInformModalVisible(true);
     } else if (modalType === 'informacoesHome') {
       setInformacoesHomeModalVisible(true);
-    } else if (modalType === 'checkReports') { /* empty */ }
+    } else if (modalType === 'reportsModal') { 
+      setReporttsModalVisible(true)
+    }
   };
 
   useEffect(() => {
@@ -123,7 +127,7 @@ const Home: React.FC = () => {
             </Card>
           </Col>
           <Col span={8}>
-            <Card hoverable>
+            <Card hoverable onClick={() => handleCardClick('reportsModal')}>
               <div className="service-icon">
                 <SearchOutlined style={{ fontSize: '64px', color: '#FF7C12' }} />
               </div>
@@ -147,6 +151,10 @@ const Home: React.FC = () => {
        <InformacoesHomeModal
         visible={informacoesHomeModalVisible}
         onClose={() => setInformacoesHomeModalVisible(false)}
+      />
+      <ReportsModal 
+        visible={reporttsModalVisible}
+        onClose={() => setReporttsModalVisible(false)}
       />
     </div>
   );

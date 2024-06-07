@@ -1,13 +1,20 @@
-import { Praia } from "./Praia";
-
 export interface Registro {
     id: number;
-    nomePessoa: String;
-    cpf: String;
+    nomePessoa: string;
+    cpf: string;
+    dataReport: string;
+    dataFinalizado?: string;
     statusPendente: boolean;
-    descricao: String;
-
-    praia: Praia
-
-
-}
+    descricao: string;
+    praia: {
+      id: number;
+      nome: string;
+      cidade: string;
+      estado: string;
+    };
+    ong?: {
+      id: number;
+      nome: string;
+    };
+  }
+  
