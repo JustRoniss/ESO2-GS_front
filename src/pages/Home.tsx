@@ -6,6 +6,7 @@ import logo from '../images/logo_sos.png'
 import CountUp from 'react-countup';
 import { AlertOutlined  , SearchOutlined , InfoCircleOutlined } from '@ant-design/icons';
 import InformModal from '../components/InformModal';
+import InformacoesHomeModal from '../components/InformacoesHomeModal';
 
 
 const { Meta } = Card;
@@ -18,17 +19,19 @@ const Home: React.FC = () => {
   });
 
   const [informModalVisible, setInformModalVisible] = useState(false);
+  const [informacoesHomeModalVisible, setInformacoesHomeModalVisible] = useState(false);
+
 
   const handleScrollToStats = () => {
     document.getElementById('stats-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleCardClick = (modalType: 'informModal' | 'checkReports') => {
+  const handleCardClick = (modalType: 'informModal' | 'checkReports' | 'informacoesHome') => {
     if (modalType === 'informModal') {
       setInformModalVisible(true);
-    } else if (modalType === 'checkReports') {
-
-    }
+    } else if (modalType === 'informacoesHome') {
+      setInformacoesHomeModalVisible(true);
+    } else if (modalType === 'checkReports') { /* empty */ }
   };
 
   useEffect(() => {
@@ -81,7 +84,7 @@ const Home: React.FC = () => {
                   </div>
                     <h1>Save Our Shores</h1>
                     <p>Salvando as praias a milhares de décadas. Dê seu apoio para manter nossas praias limpas e seguras.</p>
-                    <button onClick={handleScrollToStats}>Pinto</button>
+                    <button onClick={handleScrollToStats}>kkk</button>
                 </div>
                 <div className="hero-image">
                     <img src={heroImage} alt="Hero" />
@@ -128,7 +131,7 @@ const Home: React.FC = () => {
             </Card>
           </Col>
           <Col span={8}>
-            <Card hoverable>
+            <Card hoverable onClick={() => handleCardClick('informacoesHome')}>
               <div className="service-icon">
                 <InfoCircleOutlined style={{ fontSize: '64px', color: '#FF7C12' }} />
               </div>
@@ -140,6 +143,10 @@ const Home: React.FC = () => {
       <InformModal
         visible={informModalVisible}
         onClose={() => setInformModalVisible(false)}
+      />
+       <InformacoesHomeModal
+        visible={informacoesHomeModalVisible}
+        onClose={() => setInformacoesHomeModalVisible(false)}
       />
     </div>
   );

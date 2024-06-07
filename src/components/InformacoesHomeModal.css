@@ -1,0 +1,60 @@
+.informacoes-home-modal .ant-modal {
+    width: 80% !important;
+    max-width: 1000px;
+  }
+  
+  .informacoes-home-modal .ant-modal-body {
+    padding: 0;
+  }
+  
+  .carousel-slide {
+    position: relative;
+    text-align: center;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-description {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .informacoes-home-modal .ant-carousel .slick-dots-bottom {
+    bottom: -0px; 
+  }
+  
+  .informacoes-home-modal .ant-carousel .slick-dots-bottom li {
+    margin: 0 25px; 
+  }
+  
+  .informacoes-home-modal .ant-carousel .slick-dots-bottom li button {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    background-color: #000000;
+    border: none;
+  }
+  
+  .informacoes-home-modal .ant-carousel .slick-dots-bottom li.slick-active button {
+    background-color: #FF7C12; 
+  }
+  
+  .informacoes-home-modal .slick-prev,
+  .informacoes-home-modal .slick-next {
+    font-size: 24px;
+    z-index: 1;
+  }
+  
+  .informacoes-home-modal .slick-prev {
+    left: -50px; 
+  }
+  
+  .informacoes-home-modal .slick-next {
+    right: -50px; 
+  }
+  
