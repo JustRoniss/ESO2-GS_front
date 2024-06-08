@@ -1,5 +1,4 @@
-export interface Ong{
+export interface Ong {
     id: number;
-    nome: String;
-    
-}
+    nome: string;
+  }

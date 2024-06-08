@@ -1,8 +1,7 @@
 import React from 'react';
 import { Modal, Carousel, Image } from 'antd';
-import praiaRio from '../images/praia-rj.jpg';
+import praiaRio from '../../images/praia-rj.jpg';
 import './InformacoesHomeModal.css';
-import { validateCPF } from '../utils/CpfValidator';
 
 interface InformacoesHomeModalProps {
   visible: boolean;
