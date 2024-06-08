@@ -5,6 +5,7 @@ import derramamentoOleo from "../images/derramamento-oleo.png";
 import praiaSuja from "../images/praia-poluida.png";
 import esgoto from "../images/esgoto.png";
 import pontoReferencia from "../images/ponto-referencia.jpg";
+import crimeReport from "../images/report-falso.jpeg";
 import "./InformacoesHomeModal.css";
 
 const { Text } = Typography;
@@ -52,26 +53,52 @@ const InformacoesHomeModal: React.FC<InformacoesHomeModalProps> = ({
           </Text>
         </div>
         <div className="carousel-slide">
-          <Image src={derramamentoOleo} alt="Imagem 2" className="carousel-image" />
+          <Image
+            src={derramamentoOleo}
+            alt="Imagem 2"
+            className="carousel-image"
+          />
+          <br />
           <Text className="carousel-description">
             Derramamento de óleo no mar
           </Text>
         </div>
         <div className="carousel-slide">
           <Image src={praiaSuja} alt="Imagem 3" className="carousel-image" />
+          <br />
           <Text className="carousel-description">Lixo</Text>
         </div>
         <div className="carousel-slide">
-          <Image src={esgoto} alt="Imagem 3" className="carousel-image" />
+          <Image src={esgoto} alt="Imagem 4" className="carousel-image" />
+          <br />
           <Text className="carousel-description">Esgoto</Text>
         </div>
         <div className="carousel-slide">
-          <Image src={pontoReferencia} alt="Imagem 4" className="carousel-image" />
+          <Image
+            src={pontoReferencia}
+            alt="Imagem 5"
+            className="carousel-image"
+          />
+          <br />
           <Text className="carousel-description">
             Para garantir um informe ideal que oriente adequadamente a ONG, é
             essencial incluir detalhes específicos que facilitem a localização
             do cenário descrito, como pontos de referência visíveis ou
             características distintivas da área.
+          </Text>
+        </div>
+        <div className="carousel-slide">
+          <Image src={crimeReport} alt="Imagem 5" className="carousel-image" />
+          <br />
+          <Text className="carousel-description">
+            É essencial incluir detalhes específicos que facilitem a localização
+            do cenário descrito, como pontos de referência visíveis ou
+            características distintivas da área. Além disso, é crucial analisar
+            com cautela a complexidade do caso relatado, evitando mobilizações
+            desnecessárias da ONG para situações que não demandem sua
+            intervenção. Essa abordagem criteriosa assegura que os recursos da
+            organização sejam direcionados de forma eficaz para onde são
+            realmente necessários.
           </Text>
         </div>
       </Carousel>

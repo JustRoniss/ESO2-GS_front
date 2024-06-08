@@ -13,19 +13,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
   }
   
   .carousel-image {
     max-width: 100%;
-    height: auto;
-    width: auto; /* Ajusta a largura da imagem para o seu tamanho original */
-    max-height: 60vh; /* Limita a altura da imagem para 60% da altura da tela */
+    max-height: calc(60vh - 20px); 
+    width: auto; 
+    height: auto; 
   }
   
   .carousel-description {
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 20px; 
     font-size: 1rem;
     color: #333;
     max-width: 80%;
@@ -37,6 +36,7 @@
       max-width: 90%;
     }
   }
+  
   
   .informacoes-home-modal .ant-carousel .slick-dots-bottom {
     bottom: 0px; 
