@@ -1,7 +1,7 @@
 import { Modal, List, Typography, Alert, Spin } from "antd";
 import React, { useEffect, useState } from "react";
-import api from "../config/axiosConfig";
-import { Registro } from "../interfaces/Registro";
+import api from "../../config/axiosConfig";
+import { Registro } from "../../interfaces/Registro";
 import './ReportsModal.css';
 
 const { Title, Text } = Typography;

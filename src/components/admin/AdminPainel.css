@@ -1,0 +1,76 @@
+/* AdminPanel.css */
+.logo-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.logo-img img {
+  height: 100px; 
+  width: auto;
+}
+
+.logo-text {
+  height: 32px;
+  margin: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  color: black;
+  font-size: 18px;
+  text-align: center;
+  line-height: 32px;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.ant-layout-sider {
+  background: #fff;
+  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ant-menu-inline .ant-menu-item {
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.ant-menu-inline .ant-menu-item:hover {
+  background-color: #ff7c12;
+  color: white;
+}
+
+.ant-menu-inline .ant-menu-item-selected {
+  background-color: #ff7c12;
+  color: white;
+}
+
+.ant-layout-sider-trigger {
+  background: #fff;
+  color: black;
+}
+
+.ant-layout-sider-collapsed .logo {
+  display: none;
+}
+
+.logout-button {
+  background-color: #ff7c12;
+  border-color: #ff7c12;
+  color: white;
+}
+
+.logout-button:hover {
+  background-color: #e66f11 !important;
+  color: white;
+}
+
+.logout-container {
+  padding: 16px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

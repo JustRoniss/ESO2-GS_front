@@ -1,0 +1,29 @@
+.table-container {
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    max-height: 80vh;
+  }
+  
+  .ant-table-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .ant-table-thead > tr > th {
+    background-color: #f0f2f5;
+  }
+  
+  .ant-table-tbody > tr > td {
+    text-align: center;
+  }
+  
+  .ant-select {
+    width: 100%;
+  }
+  

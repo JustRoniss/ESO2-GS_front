@@ -4,7 +4,11 @@ import Home from './pages/Home';
 import './App.css';
 import Navbar from './components/Navbar';
 import { Layout } from 'antd';
-import Admin from './components/Admin';
+import AdminPanel from './components/admin/AdminPainel';
+import Reports from './components/admin/Reports';
+import Beaches from './components/admin/Beaches';
+import Ongs from './components/admin/Ongs';
+
 
 const AppContent: React.FC = () => {
   const location = useLocation();
@@ -20,16 +24,25 @@ const AppContent: React.FC = () => {
 
   return (
     <Layout>
-      {location.pathname !== '/admin' && <Navbar />}
-      <Layout.Content style={{ padding: '50px', marginTop: '64px' }}>
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route 
-            path="/admin" 
-            element={isAuthenticated ? <Admin /> : <Navigate to="/home" />} 
-          />
-        </Routes>
-      </Layout.Content>
+      {location.pathname.startsWith('/admin') ? (
+        <AdminPanel>
+          <Routes>
+            <Route path="/admin/reports" element={isAuthenticated ? <Reports /> : <Navigate to="/home" />} />
+            <Route path="/admin/beaches" element={isAuthenticated ? <Beaches />: <Navigate to="/home" />} />
+            <Route path="/admin/ongs" element={isAuthenticated ? <Ongs /> : <Navigate to="/home" />} />
+          </Routes>
+        </AdminPanel>
+      ) : (
+        <>
+          <Navbar />
+          <Layout.Content style={{ padding: '50px', marginTop: '64px' }}>
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/admin" element={isAuthenticated ? <Navigate to="/admin/reports" /> : <Navigate to="/home" />} />
+            </Routes>
+          </Layout.Content>
+        </>
+      )}
     </Layout>
   );
 };
