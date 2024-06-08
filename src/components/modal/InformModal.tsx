@@ -1,8 +1,8 @@
 import { Modal, Form, Input, Button, Select, Alert } from "antd";
 import React, { useEffect, useState } from "react";
-import api from "../config/axiosConfig";
-import { Praia } from "../interfaces/Praia";
-import { validateCPF } from "../utils/CpfValidator";
+import api from "../../config/axiosConfig";
+import { Praia } from "../../interfaces/Praia";
+import { validateCPF } from "../../utils/CpfValidator";
 
 interface InformModalProps {
   visible: boolean;

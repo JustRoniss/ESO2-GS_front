@@ -5,9 +5,9 @@ import heroImage from '../images/img1.webp';
 import logo from '../images/logo_sos.png'
 import CountUp from 'react-countup';
 import { AlertOutlined  , SearchOutlined , InfoCircleOutlined } from '@ant-design/icons';
-import InformModal from '../components/InformModal';
-import InformacoesHomeModal from '../components/InformacoesHomeModal';
-import ReportsModal from '../components/ReportsModal';
+import InformModal from '../components/modal/InformModal';
+import InformacoesHomeModal from '../components/modal/InformacoesHomeModal';
+import ReportsModal from '../components/modal/ReportsModal';
 
 
 const { Meta } = Card;
