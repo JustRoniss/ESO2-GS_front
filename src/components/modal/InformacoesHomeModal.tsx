@@ -1,11 +1,11 @@
 import React from "react";
 import { Modal, Carousel, Image, Typography, Grid } from "antd";
-import praiaRio from "../images/praia-rj.jpg";
-import derramamentoOleo from "../images/derramamento-oleo.png";
-import praiaSuja from "../images/praia-poluida.png";
-import esgoto from "../images/esgoto.png";
-import pontoReferencia from "../images/ponto-referencia.jpg";
-import crimeReport from "../images/report-falso.jpeg";
+import praiaRio from "../../images/praia-rj.jpg"
+import derramamentoOleo from "../../images/derramamento-oleo.png";
+import praiaSuja from "../../images/praia-poluida.png";
+import esgoto from "../../images/esgoto.png";
+import pontoReferencia from "../../images/ponto-referencia.jpg";
+import crimeReport from "../../images/report-falso.jpeg";
 import "./InformacoesHomeModal.css";
 
 const { Text } = Typography;

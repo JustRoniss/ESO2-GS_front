@@ -62,6 +62,7 @@ const InformModal: React.FC<InformModalProps> = ({ visible, onClose }) => {
       });
 
       if (response.status === 201) {
+        alert("Denúncia registrada!")
         console.log("Criado com sucesso");
         handleReset();
         onClose();

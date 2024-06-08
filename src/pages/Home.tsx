@@ -86,10 +86,10 @@ const Home: React.FC = () => {
                   <div style={{marginLeft: '30px'}}>
                    
                   </div>
-                    <h1 style={{color: '#081D18'}}>SAVE OUR SHORES</h1>
-                    <p style={{color: '#081D18'}}>Nosso iniciativa visa promover ações integradas e unir esforços para preservar nossas praias, garantindo que possamos usufruir dessa riqueza natural e de seus recursos de maneira sustentável, responsável e respeitosa. 
+                    <h1 style={{color: '#081D18', fontWeight: 'bold'}}>SAVE OUR SHORES</h1>
+                    <p style={{color: '#081D18', fontWeight: 'bold'}}>Nossa iniciativa visa promover ações integradas e unir esforços para preservar as praias, garantindo que possamos usufruir dessa riqueza natural e de seus recursos de maneira sustentável, responsável e respeitosa. 
                     </p>
-                    <p style={{color: '#081D18'}}>Salvar a sua praia é a nossa praia.</p>
+                    <p style={{color: '#081D18', fontWeight: 'bold'}}>Salvar a sua praia é a nossa praia.</p>
 
                     <button onClick={handleScrollToStats} style={{backgroundColor: '#081C18', borderRadius: '20px', width: '200px'}}>SAIBA COMO</button>
                 </div>

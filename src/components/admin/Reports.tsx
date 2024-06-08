@@ -36,7 +36,7 @@ const Reports: React.FC = () => {
       })
       .catch(error => {
         console.error('Erro ao atualizar o status:', error);
-        message.error('Erro ao atualizar o status');
+        message.error('Erro ao atualizar o status:');
       });
   };
 
@@ -72,7 +72,7 @@ const Reports: React.FC = () => {
         <Select 
           defaultValue={status ? 'Pendente' : 'Finalizado'} 
           onChange={() => handleChangeStatus(record.id)}
-          disabled={!status} 
+          disabled={!record.ong || !status} 
         >
           <Option value="Finalizado">Finalizado</Option>
         </Select>

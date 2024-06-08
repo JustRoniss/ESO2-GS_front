@@ -1,0 +1,46 @@
+.table-container {
+    margin: 20px auto; 
+    max-width: 1200px; 
+  }
+  
+  .table-container .ant-table {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-container .ant-table-thead > tr > th {
+    background: #fafafa;
+  }
+  
+  .table-container .ant-btn-primary {
+    background-color: rgb(255, 124, 18);
+    border-color: rgb(255, 124, 18);
+  }
+  
+  .table-container .ant-btn-primary:hover {
+    background-color: #ff8a23;
+    border-color: #ff8a23;
+  }
+  
+  .table-container .ant-btn-primary:focus {
+    background-color: #ff8a23;
+    border-color: #ff8a23;
+  }
+  
+  .table-container .ant-modal {
+    border-radius: 8px;
+  }
+  
+  .table-container .ant-modal-header {
+    border-bottom: none;
+  }
+  
+  .table-container .ant-modal-title {
+    font-weight: bold;
+  }
+  
+  .table-container .ant-modal-footer {
+    border-top: none;
+  }
+  

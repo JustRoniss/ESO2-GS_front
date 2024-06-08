@@ -1,0 +1,39 @@
+.beaches-container {
+    padding: 24px;
+    background: #fff;
+    margin: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+  }
+  
+  .beaches-container .ant-table {
+    margin-top: 16px;
+  }
+  
+  .beaches-container .ant-table-thead > tr > th {
+    background: #fafafa;
+    font-weight: bold;
+  }
+  
+  .beaches-container .ant-table-tbody > tr > td {
+    vertical-align: middle;
+  }
+  
+  .beaches-container .ant-btn-primary {
+    background-color: #ff7c12;
+    border-color: #ff7c12;
+  }
+  
+  .beaches-container .ant-btn-primary:hover {
+    background-color: #e66910;
+    border-color: #e66910;
+  }
+  
+  .beaches-container .ant-modal-footer {
+    display: none;
+  }
+  
+  .beaches-container .ant-modal {
+    top: 20px;
+  }
+  
