@@ -57,6 +57,8 @@ const ReportsModal: React.FC<ReportsModalProps> = ({ visible, onClose }) => {
                         <Text>Status: {item.statusPendente ? "Pendente" : "Finalizado"}</Text>
                         <br />
                         <Text>Praia: {item.praia.nome} ({item.praia.cidade} - {item.praia.estado})</Text>
+                        <br />
+                        <Text>ONG: {item.ong?.nome == null ? "Sem ONGs atuando ainda nesse registro, por favor aguarde  que logo vamos salvar esta praia": item.ong?.nome}</Text>
                       </div>
                     }
                   />
@@ -85,6 +87,8 @@ const ReportsModal: React.FC<ReportsModalProps> = ({ visible, onClose }) => {
                         <Text>Status: {item.statusPendente ? "Pendente" : "Finalizado"}</Text>
                         <br />
                         <Text>Praia: {item.praia.nome} ({item.praia.cidade} - {item.praia.estado})</Text>
+                        <br />
+                        <Text>ONG que salvou a praia: {item.ong?.nome == null ? "Sem ONGs atuando ainda nesse registro, por favor aguarde  que logo vamos salvar esta praia": item.ong?.nome}</Text>   
                       </div>
                     }
                   />

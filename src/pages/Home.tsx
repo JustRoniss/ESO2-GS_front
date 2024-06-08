@@ -86,9 +86,12 @@ const Home: React.FC = () => {
                   <div style={{marginLeft: '30px'}}>
                    
                   </div>
-                    <h1>Save Our Shores</h1>
-                    <p>Salvando as praias a milhares de décadas. Dê seu apoio para manter nossas praias limpas e seguras.</p>
-                    <button onClick={handleScrollToStats}>kkk</button>
+                    <h1 style={{color: '#081D18'}}>SAVE OUR SHORES</h1>
+                    <p style={{color: '#081D18'}}>Nosso iniciativa visa promover ações integradas e unir esforços para preservar nossas praias, garantindo que possamos usufruir dessa riqueza natural e de seus recursos de maneira sustentável, responsável e respeitosa. 
+                    </p>
+                    <p style={{color: '#081D18'}}>Salvar a sua praia é a nossa praia.</p>
+
+                    <button onClick={handleScrollToStats} style={{backgroundColor: '#081C18', borderRadius: '20px', width: '200px'}}>SAIBA COMO</button>
                 </div>
                 <div className="hero-image">
                     <img src={heroImage} alt="Hero" />
@@ -123,7 +126,7 @@ const Home: React.FC = () => {
               <div className="service-icon">
                 <AlertOutlined style={{ fontSize: '64px', color: '#FF7C12' }} />
               </div>
-              <Meta title="Informar praia suja" description="Informe qual praia está poluída" />
+              <Meta title="Viu um cenário de poluição na praia? " description="Reporte aqui." />
             </Card>
           </Col>
           <Col span={8}>
@@ -131,7 +134,7 @@ const Home: React.FC = () => {
               <div className="service-icon">
                 <SearchOutlined style={{ fontSize: '64px', color: '#FF7C12' }} />
               </div>
-              <Meta title="Verificar informes" description="Veja aqui qual praia está poluida." />
+              <Meta title="Verificar informes" description="Acompanhe aqui os últimos informes de praias poluídas." />
             </Card>
           </Col>
           <Col span={8}>
@@ -139,7 +142,7 @@ const Home: React.FC = () => {
               <div className="service-icon">
                 <InfoCircleOutlined style={{ fontSize: '64px', color: '#FF7C12' }} />
               </div>
-              <Meta title="Mais informações" description="Obtenha mais informações sobre nossa forma operacional" />
+              <Meta title="Mais informações" description="Saiba mais sobre o nosso funcionamento e abordagem." />
             </Card>
           </Col>
         </Row>
