@@ -10,22 +10,36 @@
   .carousel-slide {
     position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .carousel-image {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    max-height: calc(60vh - 20px); 
+    width: auto; 
+    height: auto; 
   }
   
   .carousel-description {
     margin-top: 10px;
-    margin-bottom: 50px;
-    font-size: 16px;
+    margin-bottom: 20px; 
+    font-size: 1rem;
     color: #333;
+    max-width: 80%;
   }
   
+  @media (max-width: 768px) {
+    .carousel-description {
+      font-size: 0.875rem;
+      max-width: 90%;
+    }
+  }
+  
+  
   .informacoes-home-modal .ant-carousel .slick-dots-bottom {
-    bottom: -0px; 
+    bottom: 0px; 
   }
   
   .informacoes-home-modal .ant-carousel .slick-dots-bottom li {

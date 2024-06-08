@@ -21,11 +21,13 @@
   }
   
   .list-item-meta-title {
+    margin: 20px;
     font-size: 18px;
     color: #333;
   }
   
   .list-item-meta-description {
+    margin: 20px;
     font-size: 14px;
     color: #666;
   }
